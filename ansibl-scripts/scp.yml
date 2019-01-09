@@ -1,0 +1,7 @@
+---
+- hosts: 172.31.17.105
+  become: true
+  tasks:
+   - name: "copying the file from one server to other server "
+     shell: |
+        sshpass -p "newpassword2019" scp /home/ansible/* ansible@172.31.28.179:/home/ansible/

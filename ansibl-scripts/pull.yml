@@ -1,0 +1,8 @@
+---
+- hosts: webservers dev test
+  become: true
+  tasks:
+   - name: "Changing Directory and pulling the new code"
+     shell: |
+      cd /var/www/html/hello/
+      git pull origin master

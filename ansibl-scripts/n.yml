@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+#  become: true
+  tasks: 
+    - name: Create A file 
+      file: path=/home/ansible/sam.txt state=touch
+    - name: Deleting a created file
+      file: path=/home/ansible/sam.txt state=absent 

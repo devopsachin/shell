@@ -1,0 +1,14 @@
+---
+- hosts: webservers dev test
+  become: true 
+  become_user: root
+  tasks: 
+     - name: "Installation of Jenkins in clint machine or host machines"
+       yum: name=wget  state=latest
+     - name: "Installation of httpd"
+       yum: name=httpd state=latest
+     - name: "installing java in all server "
+       yum: name=java state=latest
+     - name: "Installing jenkins in all server "   
+       shell: |
+                sudo systemctl start jenkins.service

@@ -1,0 +1,35 @@
+---
+- hosts: webservers dev test
+  become: true
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: "Install Httpd"
+      yum: name=httpd state=latest
+    - name: "Restarting httpd"
+      service: name=httpd state=restarted   
+    - name: "Installing git in server"
+      yum: name=git state=present      
+    - name: "Changing Directory and cloning"
+      shell: |
+       cd /var/www/html/
+       git init
+       git clone https://github.com/devopsachin/hello.git
+       cd hello
+       git remote add fua https://github.com/devopsachin/hello.git
+#    - command: chdir=/var/www/html/
+#      with_items:
+#      - git init       
+#      - git clone https://github.com/devopsachin/hello.git
+#      args:
+#      command: chdir=/var/www/html/ ls
+#      args:
+#      command: git init
+#      args:
+#      command: git clone https://github.com/devopsachin/hello.git
+#    - name: "Installing new empty repo"
+#      command: git init
+#   - name: "Cloning the repo"
+#     command: git clone https://github.com/devopsachin/hello.git
+#    - name: "Adding Remote as good"
+#    command: git remote add good https://github.com/devopsachin/hello.git

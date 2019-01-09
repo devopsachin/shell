@@ -1,0 +1,8 @@
+---
+- hosts: webservers dev test
+  become: true
+  tasks: 
+   - name: "changinf directory and pushing the code "
+     shell: |
+        cd /var/www/html/hello
+        git push --repo https://devopsachin:mygithub2017@github.com/devopsachin/hello.git

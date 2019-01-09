@@ -1,0 +1,6 @@
+--- Playbook start
+- hosts: webservers 
+  become: true
+  tasks:
+  - name: Copy Tomcat ZIP file to install location Short description of the task
+    copy: src=/home/ansible/epel-release-latest-7.noarch.rpm dest=/home/ansible/

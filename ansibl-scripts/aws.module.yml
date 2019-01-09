@@ -1,0 +1,7 @@
+---
+- hosts: localhost  webservers
+  become: true
+  tasks:
+        - name: "Starting the all 3 server "
+          command: aws ec2 start-instances --instance-ids i-0226127978f99a8aa i-04deb13a3b40dda3a i-0ab2e463cdb66873f
+          command: cd /var/www/html/ 

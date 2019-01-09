@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: Installing wget package
+      command: sudo yum install wget -y
+    - name: installing git
+       command: sudo yum install git -y
+    - name: checcking init
+        command: sudo git init
+    - name: checking rermote
+        command: git remote add sachin https://github.com/devopsachin/devops.git

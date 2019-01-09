@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  become: true
+  vars:
+  name: any
+   - Vasudevamurthy
+   - Niranjan
+  tasks:
+    - name: Ansible Array Example
+      debug:
+      msg: "{{ name[1] }}"

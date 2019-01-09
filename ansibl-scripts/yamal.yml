@@ -1,0 +1,6 @@
+---
+-host: webservers 
+become: true
+tasks:
+- name: create a file in desination 
+ stat: path=/home/ansible/yaml.yml state:touch

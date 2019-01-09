@@ -1,0 +1,17 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: Downloading git
+    yum: name=git state=latest
+  - name: Initing git   
+    command: git init
+  - name: adding remote 
+    command: git remote add fun12 https://github.com/devopsachin/devops.git
+  - name: adding branch 
+    command: git checkout -b new
+  - debug:      
+        msg: git installd  
+  - name: clonig into git 
+    command: git clone https://github.com/devopsachin/devops.git
+
