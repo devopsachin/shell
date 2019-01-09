@@ -1,0 +1,14 @@
+
+172.31.17.105 | SUCCESS => {
+    "changed": true,
+    "dest": "/home/ansible/niranjan.txt",
+    "failed": false,
+    "gid": 1001,
+    "group": "ansible",
+    "mode": "0600",
+    "owner": "ansible",
+    "size": 0,
+    "state": "file",
+    "uid": 1001
+}
+
