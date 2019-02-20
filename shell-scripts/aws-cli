@@ -1,0 +1,2 @@
+aws ec2 describe-instances --query 'Reservations[*].Instances[*].SecurityGroups[*].GroupId' --output text | tr '\t' '\n' | sort | uniq--> aws cli commands to find unused security groups 
+aws elbv2 describe-target-groups --output json --query 'TargetGroups[*].[LoadBalancerArns[1],TargetGroupName]'  --> to unused target groups 
