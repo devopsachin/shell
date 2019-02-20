@@ -2,3 +2,5 @@ aws ec2 describe-instances --query 'Reservations[*].Instances[*].SecurityGroups[
 aws elbv2 describe-target-groups --output json --query 'TargetGroups[*].[LoadBalancerArns[1],TargetGroupName]'  --> to unused target groups 
 
 https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-output.html   --> to how to use aws cli --query 
+
+to list all non lb arn --> aws elbv2 describe-target-groups --query 'TargetGroups[*].[LoadBalancerArns[0],TargetGroupName]' --output text | grep -i none
