@@ -11,7 +11,8 @@
   - name: adding branch 
     command: git checkout -b new
   - debug:      
-        msg: git installd  
+        msg: git installd
+        msg: Now Cloning a repo
   - name: clonig into git 
     command: git clone https://github.com/devopsachin/devops.git
 
