@@ -7,7 +7,7 @@
   - name: Initing git   
     command: git init
   - name: adding remote 
-    command: git remote add fun12 https://github.com/devopsachin/devops.git
+    command: git remote add origin https://github.com/devopsachin/devops.git
   - name: adding branch 
     command: git checkout -b new
   - debug:      
